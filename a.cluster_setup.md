@@ -6,12 +6,6 @@
 
 * Propely setup Ingress objects with security control# Cluster Setup (10%)
 
-* Use Network security policies to restrict cluster level access
-
-* Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
-
-* Propely setup Ingress objects with security control
-
 * Protect node metadata and endpoints 
 
 * Minimize use of and access to GUI elements
@@ -19,21 +13,14 @@
 * Verify platform binaries before deploying
 
 ## References
-
 github.com > cncf> curriculum> [CKS Curriculum](https://github.com/cncf/curriculum/blob/master/CKS_Curriculum_%20v1.23.pdf)
-
 kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
-
-## Questions
-### Use Network security policies to restrict cluster level access
-#### References
+## Use Network security policies to restrict cluster level access
+### References
 https://kubernetes.io/docs/concepts/services-networking/network-policies/
 
-#### Notes
-Block all
-Allow All
-Allow from a namespace
+### Questions
 
 #### Create an ingress policy to deny all outbound traffic.
 
@@ -91,9 +78,11 @@ spec:
   TBD
 ```
 
+</p>
+</details>
 
 
-### Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
+## Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
 
 ### References
 * [CIS Assessor install](https://www.cisecurity.org/cis-benchmarks/)
@@ -187,7 +176,9 @@ sdfsdlkfjskljdsf
 
   
 
-### Propely setup Ingress objects with security control
+## Propely setup Ingress objects with security control
+
+### Qustions
 
 #### This is a sample question 
 
@@ -217,7 +208,9 @@ sdfsdlkfjskljdsf
 </p>
 </details>
 
-### Protect node metadata and endpoints 
+## Protect node metadata and endpoints 
+
+### Questions
 
 #### Sample question
 
@@ -235,7 +228,10 @@ kubectl logs busybox
 </p>
 </details>
 
-### Minimize use of and access to GUI elements
+## Minimize use of and access to GUI elements
+
+### Questions
+
 #### This is a sample question
 
 <details><summary>show</summary>
@@ -260,7 +256,10 @@ metadata:
 </p>
 </details>
 
-### Verify platform binaries before deploying
+## Verify platform binaries before deploying
+
+### Questions
+
 #### This is a sample question
 
 <details><summary>show</summary>
