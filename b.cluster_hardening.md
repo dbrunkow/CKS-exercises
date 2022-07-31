@@ -291,32 +291,6 @@ https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requ
 </details>
   
   
-## Update Kubernetes frequently
-### Questions
-#### Rotate the cluster certificates
-
-<details><summary>show</summary>
-<p>
-
-```bash
-
-```
-
-</p>
-</details>
-
-  #### Question
-
-<details><summary>show</summary>
-<p>
-
-```bash
-
-```
-
-</p>
-</details>
-
 
 ## Use Role Based Access Controls to minimize exposure
 #### Identify 6 Authorization Modes and what field in the api-server can they be set.
@@ -390,7 +364,7 @@ k auth can-i list pods --as dave
 </p>
 </details>
   
-## Exercise caution in useing service accounts e.g. disable defaults, minimize permissions on newly created once.
+## Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created once.
 ### Questions
 #### Question
 
