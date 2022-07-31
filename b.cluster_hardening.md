@@ -206,7 +206,36 @@ https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requ
 </p>
 </details>
     
+#### Update the certificate in your config.yaml adding user dave
+
+Save the certificates in the following locations
+
+  /etc/kubernetes/pki/users/dave.crt
   
+  /etc/kubernetes/pki/users/dave.key    
+  
+<details><summary>show</summary>
+<p>
+
+Backup your ~/.kube/config.yaml
+  
+Add dave to your config  
+```bash
+k config view
+vi ~/.kube/config
+  
+users:
+- name: dave
+  user:
+    client-certificate: /etc/kubernetes/pki/users/dave.crt
+    client-key: /etc/kubernetes/pki/users/dave.key    
+  
+```
+
+https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
+  
+</p>
+</details>  
 
 #### Where can you find the ca servers root certificate and private key?
 
