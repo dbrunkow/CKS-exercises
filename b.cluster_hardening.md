@@ -1,88 +1,77 @@
 # Cluster Hardening (15%)
 
+* Restrict access to Kubernetes API
 
+* Use Role Based Access Controls to minimize exposure
+
+* Exercise caution in useing service accounts e.g. disable defaults, minimize permissions on newly created once.
+
+* Update Kubernetes frequently
+
+## References
+github.com > cncf> curriculum> [CKS Curriculum](https://github.com/cncf/curriculum/blob/master/CKS_Curriculum_%20v1.23.pdf)
 kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
-
-### This is a sample question 
-
+## Restrict access to Kubernetes API
+### References
+### Questions
+#### Question
 <details><summary>show</summary>
 <p>
-
-```bash
-kubectl create namespace mynamespace
-kubectl run nginx --image=nginx --restart=Never -n mynamespace
-```
-
-</p>
-</details>
-
-### This is a sample question 
-
-<details><summary>show</summary>
-<p>
-
-Easily generate YAML with:
-
-```bash
-kubectl run nginx --image=nginx --restart=Never --dry-run=client -n mynamespace -o yaml > pod.yaml
-```
-
-```bash
-cat pod.yaml
-```
-
-```bash
-kubectl create -f pod.yaml
-```
-
-Alternatively, you can run in one line
-
-```bash
-kubectl run nginx --image=nginx --restart=Never --dry-run=client -o yaml | kubectl create -n mynamespace -f -
-```
-
-</p>
-</details>
-
-### Sample question
-
-<details><summary>show</summary>
-<p>
-
-```bash
-kubectl run busybox --image=busybox --command --restart=Never -it --rm -- env # -it will help in seeing the output, --rm will immediately delete the pod after it exits
-# or, just run it without -it
-kubectl run busybox --image=busybox --command --restart=Never -- env
-# and then, check its logs
-kubectl logs busybox
-```
-
-</p>
-</details>
-
-### This is a sample question
-
-<details><summary>show</summary>
-<p>
-
-```bash
-# create a  YAML template with this command
-kubectl run busybox --image=busybox --restart=Never --dry-run=client -o yaml --command -- env > envpod.yaml
-# see it
-cat envpod.yaml
-```
 
 ```YAML
-apiVersion: v1
-kind: Pod
+---
+apiVersion: 
+kind: 
 metadata:
-  creationTimestamp: null
-  labels:
-    run: busybox
-  name: busybox
+  name: 
+spec:
+  
 ```
-
 
 </p>
 </details>
+
+
+## Use Role Based Access Controls to minimize exposure
+### References
+#### Question
+
+<details><summary>show</summary>
+<p>
+
+```
+Answer
+```
+
+</p>
+</details>
+
+## Exercise caution in useing service accounts e.g. disable defaults, minimize permissions on newly created once.
+### Questions
+#### Question
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
+## Update Kubernetes frequently
+### Questions
+#### Question
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
