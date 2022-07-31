@@ -1,5 +1,7 @@
 # CKS Exercises
 
+Rought Draft
+
 A set of exercises that helped me prepare for the [Certified Kubernetes Security Specialist](https://www.cncf.io/certification/cks/) exam, offered by the Cloud Native Computing Foundation, organized by curriculum domain. This is not meant to be a sample example but merely my shared study notes at I prepare.
 
 ## Contents
