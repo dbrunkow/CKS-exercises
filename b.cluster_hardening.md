@@ -268,6 +268,25 @@ https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requ
   
 </p>
 </details>
+
+#### Access the apis url using kube-proxy.
+
+<details><summary>show</summary>
+<p>
+
+Config must be setup on another server other than the controlplane.  
+  
+```bash
+In one session, run
+  kubectl proxy
+
+In another session browse http://localhost:8001 or use curl -k http://localhost:8001
+```
+
+https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
+  
+</p>
+</details>
   
   
 ## Update Kubernetes frequently
