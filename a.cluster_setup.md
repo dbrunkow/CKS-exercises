@@ -242,26 +242,13 @@ sdfsdlkfjskljdsf
 
 ### Questions
 
-#### This is a sample question
+#### Download the kube-api binary and verify the checksum matches the website.
 
 <details><summary>show</summary>
 <p>
 
 ```bash
-# sdlkfjdskf
-sdkflsjdfkljj
 ```
-
-```YAML
-apiVersion: v1
-kind: Pod
-metadata:
-  creationTimestamp: null
-  labels:
-    run: busybox
-  name: busybox
-```
-
 
 </p>
 </details>
