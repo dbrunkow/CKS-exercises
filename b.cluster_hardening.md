@@ -191,8 +191,14 @@ https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requ
 </details>
 
 
-#### Retrieve the certificate
+#### Retrieve the certificate and save in the path specified below
 
+Save the certificates in the following locations
+
+  /etc/kubernetes/pki/users/dave.crt
+  
+  /etc/kubernetes/pki/users/dave.key    
+  
 <details><summary>show</summary>
 <p>
 
@@ -206,6 +212,22 @@ https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requ
 </p>
 </details>
     
+#### Access the API as dave using the curl command. Do not update your config yet.
+  
+<details><summary>show</summary>
+<p>
+
+```bash
+curl https://controlplane:6443/api/v1/pods \
+  --key /etc/kubernetes/pki/users/dave.key  \
+  --cert /etc/kubernetes/pki/users/dave.crt \
+  --cacert /etc/kubernetes/pki/ca.crt
+  
+```
+
+</p>
+</details>  
+
 #### Update the certificate in your config.yaml adding user dave
 
 Save the certificates in the following locations
@@ -236,7 +258,7 @@ https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requ
   
 </p>
 </details>  
-
+  
 #### Where can you find the ca servers root certificate and private key?
 
 <details><summary>show</summary>
