@@ -319,22 +319,22 @@ https://kubernetes.io/docs/reference/access-authn-authz/authorization/
 <p>
 
 ```bash
-
+"get", "list", "watch", "create", "update", "patch", "delete"
 ```
 
 </p>
 </details>
   
-#### Create a developer role and a developer-binding rolebinding, giving dave access. Role must be able to list and get resources of type pods. Always check whether the user has access first before adding.
+#### Create a namespace dev. Apply the following to this namespace. Create a developer role and a developer-binding rolebinding, giving dave access. Role must be able to list and get resources of type pods. Always check whether the user has access first before adding.
 
 <details><summary>show</summary>
 <p>
 
 ```bash
-k auth can-i list pods --as dave  
-k create role developer --verb=list,get --resource=pods
-k create rolebinding developer-binding --role=developer --user=dave
-k auth can-i list pods --as dave
+k auth can-i list pods --as dave -n dev
+k create role developer --verb=list,get --resource=pods -n dev
+k create rolebinding developer-binding --role=developer --user=dave -n dev
+k auth can-i list pods --as dave -n dev
 ```
 
 </p>
@@ -352,13 +352,12 @@ k auth can-i list pods --as dave
 </p>
 </details>
   
-#### Question
+#### Clusterbinding with role access. TBD
 
 <details><summary>show</summary>
 <p>
 
 ```bash
-
 ```
 
 </p>
