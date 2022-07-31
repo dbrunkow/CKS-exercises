@@ -4,7 +4,7 @@
 
 * Use Role Based Access Controls to minimize exposure
 
-* Exercise caution in useing service accounts e.g. disable defaults, minimize permissions on newly created once.
+* Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created once.
 
 * Update Kubernetes frequently
 
@@ -14,6 +14,8 @@ github.com > cncf> curriculum> [CKS Curriculum](https://github.com/cncf/curricul
 kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 https://kubernetes.io/docs/reference/access-authn-authz/authentication
+
+https://kubernetes.io/docs/reference/access-authn-authz/authorization/
 
 ## Restrict access to Kubernetes API
 ### Questions
@@ -280,7 +282,7 @@ Config must be setup on another server other than the controlplane.
 In one session, run
   kubectl proxy
 
-In another session browse http://localhost:8001 or use curl -k http://localhost:8001
+In another session browse http://localhost:8001/v1/apis or use curl -k http://localhost:8001/v1/apis
 ```
 
 https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
@@ -317,18 +319,77 @@ https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requ
 
 
 ## Use Role Based Access Controls to minimize exposure
-### References
-#### Question
+#### Identify 6 Authorization Modes and what field in the api-server can they be set.
 <details><summary>show</summary>
 <p>
 
 ```
+AlwaysAllow
+NODE
+ABAC
+RBAC
+Webhook
+AlwaysDeny
+  
+--authorization-mode=NODE,RBAC,Webhook  
+```
+
+https://kubernetes.io/docs/reference/access-authn-authz/authorization/
+  
+</p>
+</details>
+
+#### List the actions a role can perform.
+
+<details><summary>show</summary>
+<p>
+
+```bash
 
 ```
 
 </p>
 </details>
+  
+#### Create a developer role and a developer-binding rolebinding, giving dave access. Role must be able to list and get resources of type pods. Always check whether the user has access first before adding.
 
+<details><summary>show</summary>
+<p>
+
+```bash
+k auth can-i list pods --as dave  
+k create role developer --verb=list,get --resource=pods
+k create rolebinding developer-binding --role=developer --user=dave
+k auth can-i list pods --as dave
+```
+
+</p>
+</details>
+
+#### Dave is now a storage admin. Create a storage-admin clusterrole and a storage-admin clusterrolebinding adding dave to the clusterrolebinding.
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+  
+#### Question
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+  
 ## Exercise caution in useing service accounts e.g. disable defaults, minimize permissions on newly created once.
 ### Questions
 #### Question
