@@ -1,146 +1,88 @@
-![](https://gaforgithub.azurewebsites.net/api?repo=CKAD-exercises/multi_container&empty)
-# Multi-container Pods (10%)
+# Cluster Hardening (15%)
 
-### Create a Pod with two containers, both with image busybox and command "echo hello; sleep 3600". Connect to the second container and run 'ls'
+
+kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+
+
+### This is a sample question 
 
 <details><summary>show</summary>
 <p>
 
-Easiest way to do it is create a pod with a single container and save its definition in a YAML file:
-
 ```bash
-kubectl run busybox --image=busybox --restart=Never -o yaml --dry-run=client -- /bin/sh -c 'echo hello;sleep 3600' > pod.yaml
-vi pod.yaml
+kubectl create namespace mynamespace
+kubectl run nginx --image=nginx --restart=Never -n mynamespace
 ```
 
-Copy/paste the container related values, so your final YAML should contain the following two containers (make sure those containers have a different name):
+</p>
+</details>
 
-```YAML
-containers:
-  - args:
-    - /bin/sh
-    - -c
-    - echo hello;sleep 3600
-    image: busybox
-    imagePullPolicy: IfNotPresent
-    name: busybox
-    resources: {}
-  - args:
-    - /bin/sh
-    - -c
-    - echo hello;sleep 3600
-    image: busybox
-    name: busybox2
+### This is a sample question 
+
+<details><summary>show</summary>
+<p>
+
+Easily generate YAML with:
+
+```bash
+kubectl run nginx --image=nginx --restart=Never --dry-run=client -n mynamespace -o yaml > pod.yaml
+```
+
+```bash
+cat pod.yaml
 ```
 
 ```bash
 kubectl create -f pod.yaml
-# Connect to the busybox2 container within the pod
-kubectl exec -it busybox -c busybox2 -- /bin/sh
-ls
-exit
+```
 
-# or you can do the above with just an one-liner
-kubectl exec -it busybox -c busybox2 -- ls
+Alternatively, you can run in one line
 
-# you can do some cleanup
-kubectl delete po busybox
+```bash
+kubectl run nginx --image=nginx --restart=Never --dry-run=client -o yaml | kubectl create -n mynamespace -f -
 ```
 
 </p>
 </details>
 
-### Create a pod with an nginx container exposed on port 80. Add a busybox init container which downloads a page using "wget -O /work-dir/index.html http://neverssl.com/online". Make a volume of type emptyDir and mount it in both containers. For the nginx container, mount it on "/usr/share/nginx/html" and for the initcontainer, mount it on "/work-dir". When done, get the IP of the created pod and create a busybox pod and run "wget -O- IP"
+### Sample question
 
 <details><summary>show</summary>
 <p>
 
-Easiest way to do it is create a pod with a single container and save its definition in a YAML file:
-
 ```bash
-kubectl run web --image=nginx --restart=Never --port=80 --dry-run=client -o yaml > pod-init.yaml
-```
-
-Copy/paste the container related values, so your final YAML should contain the volume and the initContainer:
-
-Volume:
-
-```YAML
-containers:
-- image: nginx
-...
-  volumeMounts:
-  - name: vol
-    mountPath: /usr/share/nginx/html
-volumes:
-- name: vol
-  emptyDir: {}
-```
-
-initContainer:
-
-```YAML
-...
-initContainers:
-- args:
-  - /bin/sh
-  - -c
-  - wget -O /work-dir/index.html http://neverssl.com/online
-  image: busybox
-  name: box
-  volumeMounts:
-  - name: vol
-    mountPath: /work-dir
-```
-
-In total you get:
-
-```YAML
-
-apiVersion: v1
-kind: Pod
-metadata:
-  labels:
-    run: box
-  name: box
-spec:
-  initContainers: 
-  - args: 
-    - /bin/sh 
-    - -c 
-    - wget -O /work-dir/index.html http://neverssl.com/online 
-    image: busybox 
-    name: box 
-    volumeMounts: 
-    - name: vol 
-      mountPath: /work-dir 
-  containers:
-  - image: nginx
-    name: nginx
-    ports:
-    - containerPort: 80
-    volumeMounts: 
-    - name: vol 
-      mountPath: /usr/share/nginx/html 
-  volumes: 
-  - name: vol 
-    emptyDir: {} 
-```
-
-```bash
-# Apply pod
-kubectl apply -f pod-init.yaml
-
-# Get IP
-kubectl get po -o wide
-
-# Execute wget
-kubectl run box-test --image=busybox --restart=Never -it --rm -- /bin/sh -c "wget -O- IP"
-
-# you can do some cleanup
-kubectl delete po box
+kubectl run busybox --image=busybox --command --restart=Never -it --rm -- env # -it will help in seeing the output, --rm will immediately delete the pod after it exits
+# or, just run it without -it
+kubectl run busybox --image=busybox --command --restart=Never -- env
+# and then, check its logs
+kubectl logs busybox
 ```
 
 </p>
 </details>
 
+### This is a sample question
+
+<details><summary>show</summary>
+<p>
+
+```bash
+# create a  YAML template with this command
+kubectl run busybox --image=busybox --restart=Never --dry-run=client -o yaml --command -- env > envpod.yaml
+# see it
+cat envpod.yaml
+```
+
+```YAML
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busybox
+  name: busybox
+```
+
+
+</p>
+</details>

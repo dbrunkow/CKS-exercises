@@ -1,8 +1,18 @@
-![](https://gaforgithub.azurewebsites.net/api?repo=CKAD-exercises/core_concepts&empty)
 # Cluster Setup (10%)
 
 kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
+Use Network security policies to restrict cluster level access
+
+Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
+
+Propely setup Ingress objects with security control
+
+Protect node metadata and endpoints 
+
+Minimize use of and access to GUI elements
+
+Verify platform binaries before deploying
 
 ### This is a sample question 
 
@@ -45,7 +55,7 @@ kubectl run nginx --image=nginx --restart=Never --dry-run=client -o yaml | kubec
 </p>
 </details>
 
-### Create a busybox pod (using kubectl command) that runs the command "env". Run it and see the output
+### Sample question
 
 <details><summary>show</summary>
 <p>
