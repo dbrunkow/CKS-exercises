@@ -1,18 +1,18 @@
 # Minimize Microservice Vulnerabilities (20%)
 
-* Minimize host OS footprint (reduce attack surface)
+* Setup appropriate OS level security domains e.g. using PSP, OPA, security contexts
 
-* Minimize IAM roles
+* Manage kubernetes secrets
 
-* Minimize external access to the network
+* Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers)
 
-* Appropriately use kernel hardening tools such as AppArmor, seccomp
+* Implement pod to pod encryption by use of mTLS
 
 ## References
 github.com > cncf> curriculum> [CKS Curriculum](https://github.com/cncf/curriculum/blob/master/CKS_Curriculum_%20v1.23.pdf)
 kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
-## Minimize host OS footprint (reduce attack surface)
+## Setup appropriate OS level security domains e.g. using PSP, OPA, security contexts
 ### References
 ### Questions
 #### Question
@@ -33,7 +33,7 @@ spec:
 </details>
 
 
-## Minimize IAM roles
+## Manage kubernetes secrets
 ### References
 #### Question
 
@@ -47,7 +47,7 @@ Answer
 </p>
 </details>
 
-## Minimize external access to the network
+## Use container runtime sandboxes in multi-tenant environments (e.g. gvisor, kata containers)
 ### Questions
 #### Question
 
@@ -61,7 +61,7 @@ Answer
 </p>
 </details>
 
-## Appropriately use kernel hardening tools such as AppArmor, seccomp
+## Implement pod to pod encryption by use of mTLS
 ### Questions
 #### Question
 
