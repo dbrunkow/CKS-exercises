@@ -24,12 +24,80 @@ github.com > cncf> curriculum> [CKS Curriculum](https://github.com/cncf/curricul
 
 kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
-[CIS Assessor install](https://www.cisecurity.org/cis-benchmarks/)
-
-[Kube-bench install](https://github.com/aquasecurity/kube-bench/releases)
 
 ## Questions
-### CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
+### Use Network security policies to restrict cluster level access
+#### References
+https://kubernetes.io/docs/concepts/services-networking/network-policies/
+
+#### Notes
+Block all
+Allow All
+Allow from a namespace
+
+#### Create an ingress policy to deny all outbound traffic.
+
+<details><summary>show</summary>
+<p>
+
+```YAML
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-egress
+spec:
+  podSelector: {}
+  policyTypes:
+  - Egress
+```
+
+
+</p>
+</details>
+
+#### Create an ingress policy to deny all inbound traffic.
+<details><summary>show</summary>
+<p>
+  
+```YAML
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-ingress
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+```
+</p>
+</details>
+
+#### Create an ingress policy to all inbound traffic from namespace finance and accounting.
+<details><summary>show</summary>
+<p>
+
+```YAML
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: it
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  TBD
+```
+
+
+
+### Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
+
+### References
+* [CIS Assessor install](https://www.cisecurity.org/cis-benchmarks/)
+* [Kube-bench install](https://github.com/aquasecurity/kube-bench/releases)
 
 #### What tools can be used to identify best practices for your cluster. 
 
@@ -44,16 +112,29 @@ kube-bench
 </p>
 </details>
 
-
-#### Run kube-bench and show help 
+#### Run CIS CAT-PRO with help
 
 <details><summary>show</summary>
 <p>
 
 ```bash
-kube-bench -h
+./Assessor-CLI.sh -h
 ```
+</p>
+</details>
 
+#### Run CIS CAT-PRO interactively, no timestamp, index prefix
+
+<details><summary>show</summary>
+<p>
+
+```bash
+./Assessor-CLI.sh
+  -i (interactive)
+  -rd (dir)
+  -nts (no timestamp)
+  -rp index (report prefix)
+```
 </p>
 </details>
 
@@ -77,6 +158,37 @@ kube-bench -h
 </p>
 </details>
 
+#### What are the configuration items for Kubelet?
+<details><summary>show</summary>
+<p>
+
+Easily generate YAML with:
+
+```bash
+kubectl run nginx --image=nginx --restart=Never --dry-run=client -n mynamespace -o yaml > pod.yaml
+```
+
+```bash
+cat pod.yaml
+```
+
+```bash
+kubectl create -f pod.yaml
+```
+
+sdfsdjflkjlllllll
+
+```bash
+sdfsdlkfjskljdsf
+```
+
+</p>
+</details>
+
+  
+
+### Propely setup Ingress objects with security control
+
 #### This is a sample question 
 
 <details><summary>show</summary>
@@ -96,14 +208,16 @@ cat pod.yaml
 kubectl create -f pod.yaml
 ```
 
-Alternatively, you can run in one line
+sdfsdjflkjlllllll
 
 ```bash
-kubectl run nginx --image=nginx --restart=Never --dry-run=client -o yaml | kubectl create -n mynamespace -f -
+sdfsdlkfjskljdsf
 ```
 
 </p>
 </details>
+
+### Protect node metadata and endpoints 
 
 #### Sample question
 
@@ -121,16 +235,40 @@ kubectl logs busybox
 </p>
 </details>
 
-### This is a sample question
+### Minimize use of and access to GUI elements
+#### This is a sample question
 
 <details><summary>show</summary>
 <p>
 
 ```bash
 # create a  YAML template with this command
-kubectl run busybox --image=busybox --restart=Never --dry-run=client -o yaml --command -- env > envpod.yaml
-# see it
-cat envpod.yaml
+sdklfsjdfklsdj
+```
+
+```YAML
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busybox
+  name: busybox
+```
+
+
+</p>
+</details>
+
+### Verify platform binaries before deploying
+#### This is a sample question
+
+<details><summary>show</summary>
+<p>
+
+```bash
+# sdlkfjdskf
+sdkflsjdfkljj
 ```
 
 ```YAML
