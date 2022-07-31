@@ -1,18 +1,23 @@
 # Cluster Setup (10%)
 
+* Use Network security policies to restrict cluster level access
+
+* Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
+
+* Propely setup Ingress objects with security control
+
+* Protect node metadata and endpoints 
+
+* Minimize use of and access to GUI elements
+
+* Verify platform binaries before deploying
+
+### References
+
+github.com > cncf> curriculum> [CKS Curriculum](https://github.com/cncf/curriculum/blob/master/CKS_Curriculum_%20v1.23.pdf)
+
 kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
-Use Network security policies to restrict cluster level access
-
-Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
-
-Propely setup Ingress objects with security control
-
-Protect node metadata and endpoints 
-
-Minimize use of and access to GUI elements
-
-Verify platform binaries before deploying
 
 ### This is a sample question 
 
