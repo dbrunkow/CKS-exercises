@@ -1,18 +1,18 @@
 # Supply Chain (20%)
 
-* Minimize host OS footprint (reduce attack surface)
+* Minimize base image footprint
 
-* Minimize IAM roles
+* Secure your supply chain: whitelist allowed image registries, sign and validate images
 
-* Minimize external access to the network
+* Use static analyisis of user workloads (e.g. kubernetes resources, docker files)
 
-* Appropriately use kernel hardening tools such as AppArmor, seccomp
+* Scan images for known vulnerabilities
 
 ## References
 github.com > cncf> curriculum> [CKS Curriculum](https://github.com/cncf/curriculum/blob/master/CKS_Curriculum_%20v1.23.pdf)
 kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
-## Minimize host OS footprint (reduce attack surface)
+## Minimize base image footprint
 ### References
 ### Questions
 #### Question
@@ -33,7 +33,7 @@ spec:
 </details>
 
 
-## Minimize IAM roles
+## Secure your supply chain: whitelist allowed image registries, sign and validate images
 ### References
 #### Question
 
@@ -47,7 +47,7 @@ Answer
 </p>
 </details>
 
-## Minimize external access to the network
+## Use static analyisis of user workloads (e.g. kubernetes resources, docker files)
 ### Questions
 #### Question
 
@@ -61,7 +61,7 @@ Answer
 </p>
 </details>
 
-## Appropriately use kernel hardening tools such as AppArmor, seccomp
+## Scan images for known vulnerabilities
 ### Questions
 #### Question
 
