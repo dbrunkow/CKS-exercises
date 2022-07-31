@@ -1,18 +1,21 @@
 # Monitoring, Logging and Runtime Security (20%)
 
-* Minimize host OS footprint (reduce attack surface)
+* Perform behavioral analytics of syscall process and file activities at the host and container level to detect malicious activities
 
-* Minimize IAM roles
+* Detect threats within physicial infrastructure, apps, networks, data, users and workloads
 
-* Minimize external access to the network
+* Detect all phases of attack regardless where it occurs and how it spreads
 
-* Appropriately use kernel hardening tools such as AppArmor, seccomp
+* Perform deep analytical investigation and identification of bad actors within environment
+
+* Ensure immutability of containers at runtime
+* Use Audit Logs to monitor access
 
 ## References
 github.com > cncf> curriculum> [CKS Curriculum](https://github.com/cncf/curriculum/blob/master/CKS_Curriculum_%20v1.23.pdf)
 kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
-## Minimize host OS footprint (reduce attack surface)
+## Perform behavioral analytics of syscall process and file activities at the host and container level to detect malicious activities
 ### References
 ### Questions
 #### Question
@@ -33,7 +36,7 @@ spec:
 </details>
 
 
-## Minimize IAM roles
+## Detect threats within physicial infrastructure, apps, networks, data, users and workloads
 ### References
 #### Question
 
@@ -47,7 +50,7 @@ Answer
 </p>
 </details>
 
-## Minimize external access to the network
+## Detect all phases of attack regardless where it occurs and how it spreads
 ### Questions
 #### Question
 
@@ -61,7 +64,35 @@ Answer
 </p>
 </details>
 
-## Appropriately use kernel hardening tools such as AppArmor, seccomp
+## Perform deep analytical investigation and identification of bad actors within environment
+### Questions
+#### Question
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
+## Ensure immutability of containers at runtime
+### Questions
+#### Question
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
+## Use Audit Logs to monitor access
 ### Questions
 #### Question
 
