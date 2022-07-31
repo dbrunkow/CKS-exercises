@@ -138,6 +138,22 @@ https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requ
 </p>
 </details>
 
+#### Where can you find the ca servers root certificate and private key?
+
+<details><summary>show</summary>
+<p>
+
+```bash
+/etc/kubernetes/manifests/kube-controller-manager.yaml
+  --cluster-signing-cert-file=/etc/kubernetes/pki/ca.crt
+  --cluster-signing-key-file=/etc/kubernetes/pki/ca.key
+```
+
+https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
+  
+</p>
+</details>
+  
   
 ## Update Kubernetes frequently
 ### Questions
