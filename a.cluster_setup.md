@@ -180,49 +180,42 @@ sdfsdlkfjskljdsf
 
 ### Qustions
 
-#### This is a sample question 
+#### Setup TLS for an ingress
 
 <details><summary>show</summary>
 <p>
 
-Easily generate YAML with:
-
 ```bash
-kubectl run nginx --image=nginx --restart=Never --dry-run=client -n mynamespace -o yaml > pod.yaml
-```
 
-```bash
-cat pod.yaml
-```
-
-```bash
-kubectl create -f pod.yaml
-```
-
-sdfsdjflkjlllllll
-
-```bash
-sdfsdlkfjskljdsf
 ```
 
 </p>
 </details>
 
-## Protect node metadata and endpoints 
-
-### Questions
-
-#### Sample question
+#### Setup Ingress Class
 
 <details><summary>show</summary>
 <p>
 
 ```bash
-kubectl run busybox --image=busybox --command --restart=Never -it --rm -- env # -it will help in seeing the output, --rm will immediately delete the pod after it exits
-# or, just run it without -it
-kubectl run busybox --image=busybox --command --restart=Never -- env
-# and then, check its logs
-kubectl logs busybox
+
+```
+
+</p>
+</details>
+
+
+## Protect node metadata and endpoints 
+
+### Questions
+
+#### Disable readonly port in Kubelet
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
 ```
 
 </p>
@@ -238,18 +231,7 @@ kubectl logs busybox
 <p>
 
 ```bash
-# create a  YAML template with this command
-sdklfsjdfklsdj
-```
 
-```YAML
-apiVersion: v1
-kind: Pod
-metadata:
-  creationTimestamp: null
-  labels:
-    run: busybox
-  name: busybox
 ```
 
 
