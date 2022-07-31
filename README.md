@@ -13,5 +13,5 @@ A set of exercises that helped me prepare for the [Certified Kubernetes Security
 
 ### Can I PR? There is an error/an alternative way/an extra question/solution I can offer
 
-Absolutely! Feel free to PR and edit/add questions and solutions, but please stick to the existing format.
+Absolutely! Feel free to PR and edit/add questions and solutions, but please stick to the existing format. Give credit where credit is due. This format is from https://github.com/dgkanatsios/CKAD-exercises. I it helped me so much in my CKAD that I use it for other exams. 
 
