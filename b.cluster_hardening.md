@@ -230,12 +230,6 @@ curl https://controlplane:6443/api/v1/pods \
 
 #### Update the certificate in your config.yaml adding user dave
 
-Save the certificates in the following locations
-
-  /etc/kubernetes/pki/users/dave.crt
-  
-  /etc/kubernetes/pki/users/dave.key    
-  
 <details><summary>show</summary>
 <p>
 
