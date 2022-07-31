@@ -4,7 +4,7 @@
 kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 
 
-### Create a namespace called 'mynamespace' and a pod with image nginx called nginx on this namespace
+### This is a sample question 
 
 <details><summary>show</summary>
 <p>
@@ -17,7 +17,7 @@ kubectl run nginx --image=nginx --restart=Never -n mynamespace
 </p>
 </details>
 
-### Create the pod that was just described using YAML
+### This is a sample question 
 
 <details><summary>show</summary>
 <p>
@@ -30,26 +30,6 @@ kubectl run nginx --image=nginx --restart=Never --dry-run=client -n mynamespace 
 
 ```bash
 cat pod.yaml
-```
-
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  creationTimestamp: null
-  labels:
-    run: nginx
-  name: nginx
-  namespace: mynamespace
-spec:
-  containers:
-  - image: nginx
-    imagePullPolicy: IfNotPresent
-    name: nginx
-    resources: {}
-  dnsPolicy: ClusterFirst
-  restartPolicy: Never
-status: {}
 ```
 
 ```bash
@@ -101,25 +81,8 @@ metadata:
   labels:
     run: busybox
   name: busybox
-spec:
-  containers:
-  - command:
-    - env
-    image: busybox
-    name: busybox
-    resources: {}
-  dnsPolicy: ClusterFirst
-  restartPolicy: Never
-status: {}
 ```
 
-```bash
-# apply it and then see the logs
-kubectl apply -f envpod.yaml
-kubectl logs busybox
-```
 
 </p>
-</details>
-
 </details>
