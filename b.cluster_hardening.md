@@ -124,6 +124,47 @@ kubectl describe pod/<name>
 </p>
 </details>
 
+#### Add a new user to the cluster and approve by generating the keys and a certificate signing request.
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/
+  
+</p>
+</details>
+
+  
+## Update Kubernetes frequently
+### Questions
+#### Rotate the cluster certificates
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
+  #### Question
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
 
 ## Use Role Based Access Controls to minimize exposure
 ### References
