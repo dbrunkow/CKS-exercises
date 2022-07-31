@@ -4,7 +4,7 @@
 
 * Use CIS benchmark to review the security configuration of Kubernetes components (etcd, kubelet, kubedns, kubeapi)
 
-* Propely setup Ingress objects with security control# Cluster Setup (10%)
+* Propely setup Ingress objects with security control
 
 * Protect node metadata and endpoints 
 
