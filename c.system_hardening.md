@@ -63,8 +63,8 @@ Answer
 
 ## Appropriately use kernel hardening tools such as AppArmor, seccomp
 ### Questions
-#### Question
 
+#### What is AppArmor?
 <details><summary>show</summary>
 <p>
 
@@ -75,3 +75,57 @@ Answer
 </p>
 </details>
 
+#### Question
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
+#### What is seccomp?
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
+#### Question
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
+#### Question
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
+#### Question
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
