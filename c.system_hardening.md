@@ -35,8 +35,8 @@ spec:
 
 ## Minimize IAM roles
 ### References
-#### Question
 
+#### Question
 <details><summary>show</summary>
 <p>
 
@@ -49,13 +49,16 @@ Answer
 
 ## Minimize external access to the network
 ### Questions
-#### Question
 
+#### What are your VM firewall options
 <details><summary>show</summary>
 <p>
 
 ```bash
-
+ufw
+iptables
+firewalld
+...
 ```
 
 </p>
