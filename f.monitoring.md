@@ -29,6 +29,18 @@ Tool to trace system calls and signals.
 </p>
 </details>
 
+#### What is falco? Hint, has nothing to do with Amadeus.
+
+<details><summary>show</summary>
+<p>
+
+```
+
+```
+
+</p>
+</details>
+
 #### Use strace to identify the syscalls used when touching a file; touch /tmp/cks.txt
 
 <details><summary>show</summary>
