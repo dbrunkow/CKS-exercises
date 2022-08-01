@@ -18,23 +18,28 @@ kubernetes.io > Documentation > Reference > kubectl CLI > [kubectl Cheat Sheet](
 ## Perform behavioral analytics of syscall process and file activities at the host and container level to detect malicious activities
 ### References
 ### Questions
-#### Question
+#### What is strace? Run it and generate the help page.
 <details><summary>show</summary>
 <p>
 
-```YAML
----
-apiVersion: 
-kind: 
-metadata:
-  name: 
-spec:
-  
+```
+Tool to trace system calls and signals.  
 ```
 
 </p>
 </details>
 
+#### Use strace to identify the syscalls used when touching a file; touch /tmp/cks.txt
+
+<details><summary>show</summary>
+<p>
+
+```
+
+```
+
+</p>
+</details>
 
 ## Detect threats within physicial infrastructure, apps, networks, data, users and workloads
 ### References
