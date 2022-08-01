@@ -34,9 +34,10 @@ spec:
 
 
 ## Minimize IAM roles
-### References
 
-#### Question
+Obviously IAM/AWS isn't available on the exam, but user management is.
+
+#### What's the difference between useradd and adduser?
 <details><summary>show</summary>
 <p>
 
