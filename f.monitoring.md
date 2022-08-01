@@ -29,6 +29,18 @@ Tool to trace system calls and signals.
 </p>
 </details>
 
+#### Use strace to identify the syscalls used when touching a file; touch /tmp/cks.txt
+
+<details><summary>show</summary>
+<p>
+
+```
+
+```
+
+</p>
+</details>
+
 #### What is falco? Hint, has nothing to do with Amadeus.
 
 <details><summary>show</summary>
@@ -41,7 +53,7 @@ Tool to trace system calls and signals.
 </p>
 </details>
 
-#### Use strace to identify the syscalls used when touching a file; touch /tmp/cks.txt
+#### 50 falco questions to follow.
 
 <details><summary>show</summary>
 <p>
@@ -52,6 +64,7 @@ Tool to trace system calls and signals.
 
 </p>
 </details>
+
 
 ## Detect threats within physicial infrastructure, apps, networks, data, users and workloads
 ### References
