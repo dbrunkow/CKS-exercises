@@ -110,7 +110,7 @@ Answer
 
 ## Ensure immutability of containers at runtime
 ### Questions
-#### Question
+#### Create a pod that cannot write to the filesystem.
 
 <details><summary>show</summary>
 <p>
@@ -121,6 +121,19 @@ Answer
 
 </p>
 </details>
+
+#### Create a pod that cannot elevate user to root.
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
 
 ## Use Audit Logs to monitor access
 ### Questions
