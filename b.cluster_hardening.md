@@ -290,96 +290,6 @@ https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requ
 </p>
 </details>
   
-  
-
-## Use Role Based Access Controls to minimize exposure
-#### Identify 6 Authorization Modes and what field in the api-server can they be set.
-<details><summary>show</summary>
-<p>
-
-```
-AlwaysAllow
-NODE
-ABAC
-RBAC
-Webhook
-AlwaysDeny
-  
---authorization-mode=NODE,RBAC,Webhook  
-```
-
-https://kubernetes.io/docs/reference/access-authn-authz/authorization/
-  
-</p>
-</details>
-
-#### List the actions a role can perform.
-
-<details><summary>show</summary>
-<p>
-
-```bash
-"get", "list", "watch", "create", "update", "patch", "delete"
-```
-
-</p>
-</details>
-  
-#### Create a namespace dev. Apply the following to this namespace. Create a developer role and a developer-binding rolebinding, giving dave access. Role must be able to list and get resources of type pods. Always check whether the user has access first before adding.
-
-<details><summary>show</summary>
-<p>
-
-```bash
-k auth can-i list pods --as dave -n dev
-k create role developer --verb=list,get --resource=pods -n dev
-k create rolebinding developer-binding --role=developer --user=dave -n dev
-k auth can-i list pods --as dave -n dev
-```
-
-</p>
-</details>
-
-#### Dave is now a storage admin. Create a storage-admin clusterrole and a storage-admin clusterrolebinding adding dave to the clusterrolebinding.
-
-<details><summary>show</summary>
-<p>
-
-```bash
-
-```
-
-</p>
-</details>
-  
-#### Clusterbinding with role access. TBD
-
-<details><summary>show</summary>
-<p>
-
-```bash
-```
-
-</p>
-</details>
-  
-## Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones.
-### Questions
-#### Question
-
-<details><summary>show</summary>
-<p>
-
-```bash
-
-```
-
-</p>
-</details>
-
-## Update Kubernetes frequently
-### Questions
-  
 https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/
 
 https://kubernetes.io/docs/reference/access-authn-authz/kubelet-authn-authz/  
@@ -489,7 +399,97 @@ curl -k https://localhost/10250/    \
 ```
 
 </p>
+</details>  
+
+## Use Role Based Access Controls to minimize exposure
+#### Identify 6 Authorization Modes and what field in the api-server can they be set.
+<details><summary>show</summary>
+<p>
+
+```
+AlwaysAllow
+NODE
+ABAC
+RBAC
+Webhook
+AlwaysDeny
+  
+--authorization-mode=NODE,RBAC,Webhook  
+```
+
+https://kubernetes.io/docs/reference/access-authn-authz/authorization/
+  
+</p>
 </details>
+
+#### List the actions a role can perform.
+
+<details><summary>show</summary>
+<p>
+
+```bash
+"get", "list", "watch", "create", "update", "patch", "delete"
+```
+
+</p>
+</details>
+  
+#### Create a namespace dev. Apply the following to this namespace. Create a developer role and a developer-binding rolebinding, giving dave access. Role must be able to list and get resources of type pods. Always check whether the user has access first before adding.
+
+<details><summary>show</summary>
+<p>
+
+```bash
+k auth can-i list pods --as dave -n dev
+k create role developer --verb=list,get --resource=pods -n dev
+k create rolebinding developer-binding --role=developer --user=dave -n dev
+k auth can-i list pods --as dave -n dev
+```
+
+</p>
+</details>
+
+#### Dave is now a storage admin. Create a storage-admin clusterrole and a storage-admin clusterrolebinding adding dave to the clusterrolebinding.
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+  
+#### Clusterbinding with role access. TBD
+
+<details><summary>show</summary>
+<p>
+
+```bash
+```
+
+</p>
+</details>
+  
+## Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones.
+### Questions
+#### Question
+
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
+## Update Kubernetes frequently
+### Questions
+  
+
   
 #### 
 <details><summary>show</summary>
