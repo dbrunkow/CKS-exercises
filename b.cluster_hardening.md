@@ -379,8 +379,119 @@ k auth can-i list pods --as dave -n dev
 
 ## Update Kubernetes frequently
 ### Questions
-#### Question
+  
+https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/
 
+https://kubernetes.io/docs/reference/access-authn-authz/kubelet-authn-authz/  
+  
+https://kubernetes.io/docs/reference/config-api/kubelet-config.v1beta1/  
+
+#### Where do you find the kubelet config file?
+<details><summary>show</summary>
+<p>
+
+```bash
+kubelet.service
+  --config=/var/lib/kubelet/kubelet-config.yaml
+```
+or
+```bash
+ps -ef | grep kubelet
+  --config=/var/lib/kubelet/kubelet-config.yaml
+```
+</p>
+</details>
+
+#### What kubelet port allows for unauthenticated read-only access? 
+<details><summary>show</summary>
+<p>
+
+This port and access may have been deprecated or removed in newer kubernetes versions.
+```bash
+10255
+```
+</p>
+</details>
+
+#### What kubelet ports allows full access?
+<details><summary>show</summary>
+<p>
+
+```bash
+10250
+```
+
+</p>
+</details>
+
+#### How do you access syslog through the kubelet api?
+<details><summary>show</summary>
+<p>
+
+```bash
+curl -ks https://localhost:10250/logs/syslog
+```
+
+</p>
+</details>
+
+#### Access the kubelet metris api.
+<details><summary>show</summary>
+<p>
+
+```bash
+curl -ks https://localhost:10255/metrics
+```
+
+Port must be non-zero  
+```bash  
+--read-only-port=10255
+```
+
+```yaml
+apiVersion: kubelet.config.k8s.io/v1beta
+kind: KubeletConfiguration
+readOnlyPort: 0
+```
+  
+</p>
+</details>
+
+#### How do you disable anonymous access in the kubelet service?
+<details><summary>show</summary>
+<p>
+
+```bash
+kubelet.service
+  --anonymous-auth=false
+```
+or
+```yaml
+apiVersion: kubelet.config.k8s.io/v1beta
+kind: KubeletConfiguration
+authentication:
+  anonymous:
+    enabled: false
+```
+  
+</p>
+</details>
+
+#### How do you authenticate against the kubernetes api with the key,cert?
+<details><summary>show</summary>
+<p>
+
+```bash
+curl -k https://localhost/10250/    \
+  --key  \
+  --cert
+  --
+```
+
+</p>
+</details>
+  
+#### 
 <details><summary>show</summary>
 <p>
 
@@ -391,3 +502,35 @@ k auth can-i list pods --as dave -n dev
 </p>
 </details>
 
+  #### 
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
+#### 
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
+
+#### 
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>
