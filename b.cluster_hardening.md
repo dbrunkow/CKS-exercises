@@ -4,7 +4,7 @@
 
 * Use Role Based Access Controls to minimize exposure
 
-* Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created once.
+* Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones.
 
 * Update Kubernetes frequently
 
@@ -363,7 +363,7 @@ k auth can-i list pods --as dave -n dev
 </p>
 </details>
   
-## Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created once.
+## Exercise caution in using service accounts e.g. disable defaults, minimize permissions on newly created ones.
 ### Questions
 #### Question
 
