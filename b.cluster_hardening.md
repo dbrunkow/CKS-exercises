@@ -401,6 +401,51 @@ curl -k https://localhost/10250/    \
 </p>
 </details>  
 
+#### Setup kubectl proxy to connect to the api. Return the version of kubernetes. Return the list of pods.
+<details><summary>show</summary>
+<p>
+
+```bash
+kubectl proxy
+```
+  
+```bash
+curl -k http://localhost:8001/version
+{
+  "major": "1",
+  "minor": "23",
+  "gitVersion": "v1.23.0",
+  "gitCommit": "ab69524f795c42094a6630298ff53f3c3ebab7f4",
+  "gitTreeState": "clean",
+  "buildDate": "2021-12-07T18:09:57Z",
+  "goVersion": "go1.17.3",
+  "compiler": "gc",
+  "platform": "linux/amd64"
+}
+```
+
+```bash
+curl -k http://localhost:8001/api/v1/pods  
+```
+  
+</p>
+</details>  
+  
+#### Create the following pod and service. Configure port-forward'ing to the service. 
+```yaml
+
+```
+  
+<details><summary>show</summary>
+<p>
+
+```bash
+
+```
+
+</p>
+</details>  
+  
 ## Use Role Based Access Controls to minimize exposure
 #### Identify 6 Authorization Modes and what field in the api-server can they be set.
 <details><summary>show</summary>
