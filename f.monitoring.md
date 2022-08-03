@@ -43,27 +43,85 @@ Tool to trace system calls and signals.
 
 #### What is falco? Hint, has nothing to do with Amadeus but you may sing the song if you wish.
 
-<details><summary>show</summary>
-<p>
-
-```
-
-```
-
-</p>
-</details>
-
-#### 50 falco questions to follow.
+https://falco.org/docs/
 
 <details><summary>show</summary>
 <p>
 
 ```
-
+A security tool to signal an alert when a special condition is satisfied.
 ```
 
 </p>
 </details>
+
+#### What are the 4 types of falco rules?
+<details><summary>show</summary><p>
+
+```
+Descriptions, Conditions, Output, Priority.
+```
+</p></details>
+
+#### Where can you find Falco to install?
+<details><summary>show</summary><p>
+  
+```
+Go to the falco.org site and select the download option.
+https://falco.org/docs/getting-started/download/
+```
+</p></details>
+
+#### What port does falco listen on?
+<details><summary>show</summary><p>
+  
+```
+8765
+```
+</p></details>
+
+#### Where are the falco rules files?
+<details><summary>show</summary><p>
+  
+```
+/etc/falco/
+```
+</p></details>
+
+#### Run falco. Go to another shell and mkdir -p /etc/falco/foo
+<details><summary>show</summary><p>
+  
+```
+
+```
+</p></details>
+
+
+#### What is sysdig?
+<details><summary>show</summary><p>
+
+```
+Open source system monitoring tool.
+```
+</p></details>
+
+#### Run sysdig.
+<details><summary>show</summary><p>
+
+```
+# sysdig
+```
+</p></details>
+
+#### Run sysdig against nano.
+<details><summary>show</summary><p>
+
+```
+# sysdig proc.name=nano
+```
+Enter another shell and run nano. You should see the progression of syscalls.
+  
+</p></details>
 
 
 ## Detect threats within physicial infrastructure, apps, networks, data, users and workloads
