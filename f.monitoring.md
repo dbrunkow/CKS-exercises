@@ -55,7 +55,7 @@ A security tool to signal an alert when a special condition is satisfied.
 </p>
 </details>
 
-#### What are the 4 types of falco rules?
+#### What are the 4 types of falco keys?
 <details><summary>show</summary><p>
 
 ```
@@ -88,6 +88,22 @@ https://falco.org/docs/getting-started/download/
 ```
 </p></details>
 
+#### What are falco rule elements?
+<details><summary>show</summary><p>
+  
+```
+Rules, Macros, Lists
+```
+</p></details>
+
+#### Run falco in docker
+<details><summary>show</summary><p>
+https://falco.org/docs/getting-started/running/  
+```
+
+```
+</p></details>
+
 #### Run falco. Go to another shell and mkdir -p /etc/falco/foo
 <details><summary>show</summary><p>
   
@@ -95,7 +111,6 @@ https://falco.org/docs/getting-started/download/
 
 ```
 </p></details>
-
 
 #### What is sysdig?
 <details><summary>show</summary><p>
