@@ -123,6 +123,24 @@ Enter another shell and run nano. You should see the progression of syscalls.
   
 </p></details>
 
+#### Run sysdig interactively.
+<details><summary>show</summary><p>
+
+```
+# csysdig
+```
+</p></details>
+
+#### Run sysdig and show the other commands it can run.
+<details><summary>show</summary><p>
+
+```
+# sysdig -cl
+```
+To run these commands, run sysdig -c command
+</p></details>
+
+
 
 ## Detect threats within physicial infrastructure, apps, networks, data, users and workloads
 ### References
